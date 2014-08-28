@@ -11,6 +11,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+unsetopt correct_all
+unsetopt correct
 
 export GOROOT=$HOME/sources/go
 export GOPATH=$HOME/go:$HOME/Dropbox/go
@@ -19,9 +21,15 @@ export EDITOR="gvim"
 
 export PATH=$HOME/bin:$GOBIN:$PATH
 export PATH="$PATH:$HOME/.rvm/bin"
+export DOCKER_HOST=tcp://192.168.177.131:4243
 
 # if [ -f $(brew --prefix)/etc/bash_completion ]; then
 # 	. $(brew --prefix)/etc/bash_completion
 # fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/imihalik/apps/google-cloud-sdk/path.zsh.inc'
+source '/Users/imihalik/apps/google-cloud-sdk/completion.zsh.inc'
+
